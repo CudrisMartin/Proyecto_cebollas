@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Cocinados-cortados/Cocinado-cortado.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Lechuga/Lechuga cortada.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.6191, 3.12479 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.4732, 4.7802 )
+
+[node name="Lechuga_c" type="KinematicBody2D" groups=[
+"Licuable",
+]]
+collision_mask = 4
+script = ExtResource( 1 )
+identificator = "Lechuga_c"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 6.9671 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 6.9671 )
+shape = SubResource( 2 )
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

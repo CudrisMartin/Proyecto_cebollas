@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Cocinados-cortados/Cocinado-cortado.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Arroz/Arroz cocido.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.95722, 5.66743 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.7064, 6.51023 )
+
+[node name="Arroz_k" type="KinematicBody2D" groups=[
+"Licuable",
+]]
+collision_mask = 4
+script = ExtResource( 1 )
+identificator = "Arroz_k"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4.70477 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 5.07935 )
+shape = SubResource( 2 )
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

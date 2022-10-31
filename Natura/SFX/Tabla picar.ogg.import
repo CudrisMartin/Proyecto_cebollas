@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Tabla picar.ogg-a5dbd55bf1c5fb0513ca828e3b77752e.oggstr"
+
+[deps]
+
+source_file="res://SFX/Tabla picar.ogg"
+dest_files=[ "res://.import/Tabla picar.ogg-a5dbd55bf1c5fb0513ca828e3b77752e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
