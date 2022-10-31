@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Cebolla.tscn" type="PackedScene" id=1]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Cebolla" parent="." instance=ExtResource( 1 )]
+position = Vector2( 91, 75 )
+scale = Vector2( 3, 3 )
