@@ -53,4 +53,4 @@ func re_planta():
 		if horas == horas_max:
 			activado == false
 			emit_signal("fin_reloj")
-		print("Planta Horas: "+str(horas)+" Minutos: "+str(minutos))
+		#print("Planta Horas: "+str(horas)+" Minutos: "+str(minutos))

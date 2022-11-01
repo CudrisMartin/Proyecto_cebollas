@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Terreno.gd" type="Script" id=1]
+[ext_resource path="res://Nodos/Reloj.tscn" type="PackedScene" id=2]
+
+[node name="Terreno" type="Area2D"]
+script = ExtResource( 1 )
+hidratacion = 10
+
+[node name="Reloj" parent="." instance=ExtResource( 2 )]
