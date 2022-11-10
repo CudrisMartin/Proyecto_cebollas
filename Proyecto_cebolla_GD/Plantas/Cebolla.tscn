@@ -41,6 +41,7 @@ horas_max = 10
 modo = 1
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 12.0
 margin_top = -11.0
 margin_right = 52.0

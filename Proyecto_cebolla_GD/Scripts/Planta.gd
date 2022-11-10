@@ -7,12 +7,15 @@ export (int) var hid
 var home_position
 
 onready var m = float(fert)/float(vel_cre)
+onready var ter
 
 onready var re = $Reloj
 
 var crecimiento = 0
 
 func _process(delta):
+	
+	hid = ter.hid_actual
 	
 	var cre = m*re.horas
 	

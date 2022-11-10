@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Terreno.gd" type="Script" id=1]
 [ext_resource path="res://Nodos/Reloj.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 45, 45 )
+extents = Vector2( 16, 16 )
 
-[node name="Terreno" type="Node2D"]
+[sub_resource type="CircleShape2D" id=2]
+radius = 22.6274
+
+[node name="Terreno" type="Node2D" groups=["Terreno"]]
 script = ExtResource( 1 )
 hidratacion = 10
 
@@ -17,4 +20,17 @@ hidratacion = 10
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Plantas_cer" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plantas_cer"]
+rotation = 0.785708
+shape = SubResource( 2 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Plantas_cer" to="." method="_on_Plantas_cer_area_entered"]

@@ -43,7 +43,7 @@ func re_mundial():
 		if horas == horas_max:
 			activado == false
 			emit_signal("fin_reloj")
-		print("Mundo Horas: "+str(horas)+" Minutos: "+str(minutos))
+		#print("Mundo Horas: "+str(horas)+" Minutos: "+str(minutos))
 
 func re_planta():
 	if activado:

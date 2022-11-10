@@ -6,7 +6,10 @@
 [node name="Mundo" type="Node2D"]
 
 [node name="Terreno" parent="." instance=ExtResource( 1 )]
-position = Vector2( 56, 61 )
+position = Vector2( 88, 99 )
+
+[node name="Terreno2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 131 )
 
 [node name="Semilla_ceb" parent="." instance=ExtResource( 2 )]
-position = Vector2( 236, 50 )
+position = Vector2( 195, 125 )
