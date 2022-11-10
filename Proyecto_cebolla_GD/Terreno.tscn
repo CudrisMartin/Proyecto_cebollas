@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Terreno.gd" type="Script" id=1]
 [ext_resource path="res://Nodos/Reloj.tscn" type="PackedScene" id=2]
 
-[node name="Terreno" type="Area2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45, 45 )
+
+[node name="Terreno" type="Node2D"]
 script = ExtResource( 1 )
 hidratacion = 10
 
 [node name="Reloj" parent="." instance=ExtResource( 2 )]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

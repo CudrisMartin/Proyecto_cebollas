@@ -4,6 +4,8 @@ export (int) var vel_cre
 export (int) var fert
 export (int) var hid
 
+var home_position
+
 onready var m = float(fert)/float(vel_cre)
 
 onready var re = $Reloj

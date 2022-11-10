@@ -15,6 +15,10 @@ func reset():
 	minutos = 0
 	horas = 0
 
+func isn_restart():
+	reset()
+	start()
+
 func start():
 	activado = true
 
