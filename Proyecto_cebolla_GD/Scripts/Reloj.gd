@@ -15,7 +15,7 @@ func reset():
 	minutos = 0
 	horas = 0
 
-func isn_restart():
+func restart():
 	reset()
 	start()
 
