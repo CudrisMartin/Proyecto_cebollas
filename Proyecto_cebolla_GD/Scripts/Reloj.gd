@@ -22,7 +22,7 @@ func restart():
 func start():
 	activado = true
 
-func _process(delta):
+func _process(_delta):
 	match modo:
 		0:
 			re_mundial()

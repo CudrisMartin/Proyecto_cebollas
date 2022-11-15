@@ -17,11 +17,14 @@ var climas = {
 	"Soleado": 2,
 	"Lluvia": 3
 }
+
 var plantas = {
 	"Semilla_ceb": preload("res://Plantas/Cul_cebolla.tscn")
 }
 
-func _process(delta):
+signal cobrar_agua()
+
+func _process(_delta):
 	
 	pl = 1
 	
@@ -32,21 +35,19 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		hidratar()
 	
-	var a = float((pl/cl)*reloj.horas)
-	var b = float(pow(a,4))
-	var c = float(sqrt((b+1)))
-	var d = float(pl*c/cl)
-	hid_actual = float(1/d +1)
+	hid_actual = float(1/(float(pl*(float(sqrt(((float(pow((float((pl/cl)*reloj.horas)),4)))+1))))/cl)) +1)
 	
-	$Label.text = "Hidratacion actual: "+str(hid_actual)+"\nHoras: "+str(reloj.horas)+" Minutos: "+str(reloj.minutos)
+	var col_actual = (2 - hid_actual)/2 *100
+	
+	$ColorRect.color.a8 = col_actual
 
 func hidratar():
-	reloj.ins_restart()
+	reloj.restart()
 
 func _on_Area2D_body_entered(body):
-	var P_seed = body.name
-	var new_plant = null
 	if body.is_in_group("Semillas"):
+		var P_seed = body.name
+		var new_plant = null
 		if full == false:
 			if plantas.has(P_seed):
 				full = true
@@ -56,8 +57,9 @@ func _on_Area2D_body_entered(body):
 				get_parent().call_deferred("add_child", new_plant)
 				new_plant.home_position = self.global_position #+Vector2(0,-10)
 				body.inside = false
-				
-
+	elif body.get_name() == "Manguera":
+		hidratar()
+		emit_signal("cobrar_agua")
 
 func _on_Plantas_cer_area_entered(area):
 	if area.get_parent().is_in_group("Terreno"):

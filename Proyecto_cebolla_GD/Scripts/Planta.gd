@@ -13,6 +13,10 @@ onready var re = $Reloj
 
 var crecimiento = 0
 
+var generar = false
+
+const F_CEBOLLA = preload("res://Plantas/Cebolla.tscn")
+
 func _process(delta):
 	
 	hid = ter.hid_actual
@@ -25,4 +29,13 @@ func _process(delta):
 	
 	$AnimatedSprite.frame = int(crecimiento)
 	
-	
+	if generar == true:
+		if crecimiento >= 4:
+			var f = F_CEBOLLA.instance()
+			f.calidad = crecimiento
+			get_parent().add_child(f)
+			self.queue_free()
+
+func _on_Area2D_input_event(_viewport, event, _shape_idx):
+	if event.is_action_released("left_click"):
+		generar = true
