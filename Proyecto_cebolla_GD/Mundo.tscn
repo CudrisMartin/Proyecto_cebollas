@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objetos/Terreno.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Plantas/Semillas/Semilla_ceb.tscn" type="PackedScene" id=2]
@@ -8,6 +8,40 @@
 [ext_resource path="res://Scripts/Mundo.gd" type="Script" id=6]
 [ext_resource path="res://Objetos/Carro.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Nodos/Clima.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.988235, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.0305176, 0.976563, 0.95439, 1, 0.75, 0.988281, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+width = 30
+
+[sub_resource type="ParticlesMaterial" id=4]
+render_priority = 5
+emission_shape = 2
+emission_box_extents = Vector3( 250, 4, 1 )
+flag_disable_z = true
+direction = Vector3( 1, 1, 0 )
+spread = 97.69
+flatness = 0.21
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = -10.0
+initial_velocity_random = 0.38
+angular_velocity = -21.82
+angular_velocity_random = 0.23
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 1.0
+linear_accel_random = 0.32
+radial_accel = 10.0
+tangential_accel = 5.0
+damping = 12.12
+damping_random = 0.26
+scale = 4.0
+scale_random = 0.5
+color = Color( 0, 0.866667, 1, 1 )
+color_ramp = SubResource( 3 )
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource( 6 )
@@ -188,7 +222,7 @@ position = Vector2( 368, 240 )
 position = Vector2( 400, 240 )
 
 [node name="Semilla_ceb" parent="." instance=ExtResource( 2 )]
-position = Vector2( 488, 24 )
+position = Vector2( 471, 40 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 256, 152 )
@@ -211,3 +245,18 @@ margin_bottom = 14.0
 position = Vector2( 40, 40 )
 
 [node name="Clima" parent="." instance=ExtResource( 8 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 512.0
+margin_bottom = 302.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+color = Color( 0.164706, 0.152941, 0.152941, 0.196078 )
+
+[node name="Lluvia" type="Particles2D" parent="."]
+position = Vector2( 256, 0 )
+amount = 400
+lifetime = 10.0
+randomness = 0.74
+visibility_rect = Rect2( -256, -100, 512, 200 )
+process_material = SubResource( 4 )

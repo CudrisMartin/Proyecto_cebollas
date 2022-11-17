@@ -15,7 +15,6 @@ hidratacion = 10
 
 [node name="Reloj" parent="." instance=ExtResource( 2 )]
 horas_max = 12
-modo = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false

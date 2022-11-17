@@ -34,7 +34,7 @@ animation = "Crecimiento"
 frame = 6
 
 [node name="Reloj" parent="." instance=ExtResource( 2 )]
-horas_max = 10
+horas_max = 12
 modo = 1
 
 [node name="Label" type="Label" parent="."]

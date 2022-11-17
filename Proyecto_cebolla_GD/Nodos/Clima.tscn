@@ -8,4 +8,3 @@ script = ExtResource( 2 )
 
 [node name="Reloj" parent="." instance=ExtResource( 1 )]
 horas_max = 12
-modo = 1
