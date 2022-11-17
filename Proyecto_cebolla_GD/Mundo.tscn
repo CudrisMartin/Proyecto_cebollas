@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objetos/Terreno.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Plantas/Semillas/Semilla_ceb.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objetos/Fuente.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Recursos/Pasto_ts.tres" type="TileSet" id=4]
 [ext_resource path="res://Recursos/Tierra_ts.tres" type="TileSet" id=5]
+[ext_resource path="res://Scripts/Mundo.gd" type="Script" id=6]
+[ext_resource path="res://Objetos/Carro.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Nodos/Clima.tscn" type="PackedScene" id=8]
 
 [node name="Mundo" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Pasto" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -198,3 +202,12 @@ position = Vector2( 480, 160 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 0, 0, 0, 296, 512, 296, 512, 0, 552, 0, 552, 352, -40, 352, -40, 0 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Area2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 40, 40 )
+
+[node name="Clima" parent="." instance=ExtResource( 8 )]

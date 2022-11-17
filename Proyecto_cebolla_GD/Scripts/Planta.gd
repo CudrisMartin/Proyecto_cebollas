@@ -4,8 +4,6 @@ export (int) var vel_cre
 export (int) var fert
 export (int) var hid
 
-var home_position
-
 onready var m = float(fert)/float(vel_cre)
 onready var ter
 
@@ -13,11 +11,9 @@ onready var re = $Reloj
 
 var crecimiento = 0
 
-var generar = false
-
 const F_CEBOLLA = preload("res://Plantas/Cebolla.tscn")
 
-func _process(delta):
+func _process(_delta):
 	
 	hid = ter.hid_actual
 	
@@ -28,14 +24,14 @@ func _process(delta):
 	$Label.text = "Cre: "+ str(cre)+" Crecimiento: "+str(crecimiento)+"\nHora: "+str(re.horas)+" Minuto: "+str(re.minutos)
 	
 	$AnimatedSprite.frame = int(crecimiento)
-	
-	if generar == true:
-		if crecimiento >= 4:
-			var f = F_CEBOLLA.instance()
-			f.calidad = crecimiento
-			get_parent().add_child(f)
-			self.queue_free()
+	# all before here doesn't matter, works as intended
 
-func _on_Area2D_input_event(_viewport, event, _shape_idx):
-	if event.is_action_released("left_click"):
-		generar = true
+
+func _on_Button_pressed():
+	print("Presionado")
+	if crecimiento >= 4:
+		var f = F_CEBOLLA.instance() #should create an instance of other node
+		f.global_position = self.global_position
+		f.calidad = crecimiento      
+		get_parent().add_child(f)
+		self.queue_free()

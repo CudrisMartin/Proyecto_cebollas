@@ -7,13 +7,15 @@
 extents = Vector2( 16, 16 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 22.6274
+radius = 21.9317
 
 [node name="Terreno" type="Node2D" groups=["Terreno"]]
 script = ExtResource( 1 )
 hidratacion = 10
 
 [node name="Reloj" parent="." instance=ExtResource( 2 )]
+horas_max = 12
+modo = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false

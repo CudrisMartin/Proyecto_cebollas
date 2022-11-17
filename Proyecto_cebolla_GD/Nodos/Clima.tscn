@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Nodos/Reloj.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Clima.gd" type="Script" id=2]
+
+[node name="Clima" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Reloj" parent="." instance=ExtResource( 1 )]
+horas_max = 12
+modo = 1
