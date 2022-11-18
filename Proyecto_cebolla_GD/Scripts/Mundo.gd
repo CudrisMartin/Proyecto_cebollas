@@ -34,13 +34,17 @@ func _ready():
 func _process(_delta):
 	$CanvasLayer/Control/Label.text = "Dinero: " + str(Dinero.dinero) +"\nClima actual: "+str(clima_act)
 	$Lluvia.emitting = (clima_act == 3)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		fin_dia()
+
 
 func clima_nuevo(cl):
 	clima_act = cl
 	$CanvasLayer/Clima_act.color = climas[cl]
 
 func fin_dia():
-	$AnimationPlayer.play("Fin_dia")
+	$AnimationPlayer.play("fin_dia")
 	if Dinero.dinero >= 100:
 		$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "Sobreviviste otro dia más"
 	else:
