@@ -4,7 +4,7 @@
 [ext_resource path="res://Nodos/Reloj.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+extents = Vector2( 15, 15 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 21.9317
@@ -17,7 +17,6 @@ hidratacion = 10
 horas_max = 12
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )

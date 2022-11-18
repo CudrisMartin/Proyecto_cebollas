@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://GravityBold8.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.905882, 0.711765, 0.129412, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.823529, 0.451164, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.905882, 0.87451, 0.129412, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.823529, 0.603922, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.957031, 0.421972, 0.100937, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.699219, 0.321976, 0.117447, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.952941, 0.760784, 0.423529, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.824219, 0.520117, 0.196396, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
+anti_aliasing = false
+
+[resource]
+default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 7 )
+Button/styles/normal = SubResource( 8 )
+Button/styles/pressed = SubResource( 9 )
+Label/fonts/font = ExtResource( 1 )
+Panel/colors/0a03f2 = Color( 0.301961, 0.929412, 0.784314, 1 )
+Panel/styles/panel = SubResource( 6 )

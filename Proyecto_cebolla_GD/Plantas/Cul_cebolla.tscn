@@ -21,7 +21,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Cul_cebolla" type="KinematicBody2D"]
+[node name="Cul_cebolla" type="Node2D" groups=["Cultivo"]]
 script = ExtResource( 1 )
 vel_cre = 3
 fert = 2
@@ -36,6 +36,7 @@ frame = 6
 [node name="Reloj" parent="." instance=ExtResource( 2 )]
 horas_max = 12
 modo = 1
+activado = true
 
 [node name="Label" type="Label" parent="."]
 visible = false

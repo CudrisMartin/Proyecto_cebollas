@@ -60,3 +60,9 @@ func _on_Area2D_body_entered(body):
 func _on_Plantas_cer_area_entered(area):
 	if area.get_parent().is_in_group("Terreno"):
 		cercanas.append(area.get_parent())
+
+func cosechar():
+	full = false
+
+func reiniciar():
+	reloj.restart()

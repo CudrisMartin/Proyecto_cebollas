@@ -13,7 +13,6 @@ func _ready():
 		precio = 12 - calidad/2
 
 func _process(_delta):
-	sleeping = inside
 	if inside:
 		global_position = get_global_mouse_position()
 
@@ -25,4 +24,4 @@ func _on_Area2D_input_event(_viewport, event, _shape_idx):
 		inside = false
 
 func delete():
-	self.queue_free()
+	call_deferred("queue_free")

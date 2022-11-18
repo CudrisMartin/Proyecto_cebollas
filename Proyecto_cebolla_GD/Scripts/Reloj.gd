@@ -8,7 +8,7 @@ export (int) var modo = 0
 var segundos = 0
 var minutos = 0
 var horas = 0
-var activado = true
+export (bool) var activado = false
 
 func reset():
 	segundos = 0
