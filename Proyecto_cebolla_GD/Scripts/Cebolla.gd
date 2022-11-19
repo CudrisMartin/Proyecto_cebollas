@@ -8,9 +8,9 @@ var precio = 0
 
 func _ready():
 	if calidad < 7:
-		precio = 12 + calidad
+		precio = int(12 + calidad)
 	else:
-		precio = 12 - calidad/2
+		precio = int(12 - calidad/2)
 
 func _process(_delta):
 	if inside:

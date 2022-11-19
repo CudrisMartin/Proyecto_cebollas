@@ -22,11 +22,14 @@ var climas = {
 }
 
 func _ready():
+	
 	re.connect("fin_reloj",self,"fin_dia")
+# warning-ignore:return_value_discarded
 	$Clima.connect("clima_nuevo",self,"clima_nuevo")
 	
 	var ter = get_tree().get_nodes_in_group("Terreno")
 	for i in ter:
+# warning-ignore:return_value_discarded
 		self.connect("reiniciar",i,"reiniciar")
 	
 	inicializar()
@@ -62,17 +65,14 @@ func inicializar():
 	
 	if pl.size() != 0:
 		for j in pl:
-			pl[j].call_deferred("queue_free")
+			j.call_deferred("queue_free")
 	
 	var fr = get_tree().get_nodes_in_group("Fruto")
 	
 	if fr.size() != 0:
 		for k in fr:
-			fr[k].call_deferred("queue_free")
-	
+			k.call_deferred("queue_free")
 
 func _on_Reiniciar_pressed():
-	
 	inicializar()
-
 
