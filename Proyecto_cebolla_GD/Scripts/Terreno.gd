@@ -16,8 +16,6 @@ var plantas = {
 	"Semilla_ceb": preload("res://Plantas/Cul_cebolla.tscn")
 }
 
-signal cobrar_agua()
-
 func _process(_delta):
 	
 	pl = 1
@@ -55,7 +53,7 @@ func _on_Area2D_body_entered(body):
 				Dinero.cobrar_semillas()
 	elif body.get_name() == "Manguera":
 		hidratar()
-		emit_signal("cobrar_agua")
+		Dinero.cobrar_agua()
 
 func _on_Plantas_cer_area_entered(area):
 	if area.get_parent().is_in_group("Terreno"):

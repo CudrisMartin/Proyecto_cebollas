@@ -7,10 +7,10 @@ onready var re = $Reloj
 signal reiniciar()
 
 var climas = {
-	1: Color(1,
-			0.79,
-			0,
-			0.35),
+	1: Color(0.98,
+			0.98,
+			0.40,
+			0.15),
 	2: Color(0,
 			0,
 			0,
@@ -35,7 +35,7 @@ func _ready():
 	inicializar()
 
 func _process(_delta):
-	$CanvasLayer/Control/Label.text = "Dinero: " + str(Dinero.dinero) +"\nClima actual: "+str(clima_act)
+	$CanvasLayer/Control/Label.text = "Dinero: " + str(Dinero.dinero) +"\nClima actual: "+str(clima_act)+"\nHora: "+str(re.horas)
 	$Lluvia.emitting = (clima_act == 3)
 	
 	if Input.is_action_just_pressed("ui_accept"):
@@ -49,9 +49,9 @@ func clima_nuevo(cl):
 func fin_dia():
 	$AnimationPlayer.play("fin_dia")
 	if Dinero.dinero >= 100:
-		$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "Sobreviviste otro dia más"
+		$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "Sobreviviste otro dia mas"
 	else:
-		$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "No conseguiste reunír lo suficiente para sobrevivir"
+		$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "No conseguiste reunir\nlo suficiente para sobrevivir"
 
 func inicializar():
 	
@@ -72,6 +72,11 @@ func inicializar():
 	if fr.size() != 0:
 		for k in fr:
 			k.call_deferred("queue_free")
+	
+	$CanvasLayer/Control/Fin_juego.rect_position = Vector2(290,-372)
+	$Carro.position = Vector2(64,40)
+	$CanvasLayer/Noche.self_modulate.a = 0
+	
 
 func _on_Reiniciar_pressed():
 	inicializar()

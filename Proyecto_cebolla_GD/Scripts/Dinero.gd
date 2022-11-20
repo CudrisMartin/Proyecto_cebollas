@@ -7,3 +7,6 @@ func cobrar_semillas():
 
 func vender(pre):
 	dinero += pre
+
+func cobrar_agua():
+	dinero -= 1
