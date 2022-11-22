@@ -13,6 +13,8 @@ func _process(_delta):
 		self.set_global_position(get_global_mouse_position())
 	elif inside == false:
 		self.set_global_position(home_position)
+	
+	$CollisionShape2D.disabled = Dinero.dinero < 1
 
 func _on_AreaClicks_input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed("left_click"):

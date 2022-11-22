@@ -13,7 +13,7 @@ config_version=4
 config/name="Agronomia"
 run/main_scene="res://Pantalla_inicial.tscn"
 config/icon="res://Sprites/Plantas/Cultivo_cebollas/Fruto cebolla.png"
-config/windows_native_icon="res://Icono Agronomia.ico"
+config/windows_native_icon="res://Icono_Agronomia.ico"
 
 [autoload]
 

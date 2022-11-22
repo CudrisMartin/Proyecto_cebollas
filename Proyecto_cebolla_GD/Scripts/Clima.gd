@@ -15,6 +15,5 @@ func _process(_delta):
 	if re.horas%3 == 0 and re.horas > 0:
 		if re.horas < 12:
 			if re.segundos == 0 and re.minutos == 0:
-				print("h: "+str(re.horas)+" m: "+str(re.minutos)+" s: "+str(re.segundos))
 				clima_act = rng.randi_range(1,3)
 				emit_signal("clima_nuevo",clima_act)

@@ -12,6 +12,9 @@ var cercanas = []
 
 var full = false
 
+var agarrando_obj = false
+var obj_agarrado
+
 var plantas = {
 	"Semilla_ceb": preload("res://Plantas/Cul_cebolla.tscn")
 }
@@ -25,15 +28,12 @@ func _process(_delta):
 			pl += 1
 	
 	cl = get_parent().clima_act
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		hidratar()
-	
 	hid_actual = float(1/(float(pl*(float(sqrt(((float(pow((float((pl/cl)*reloj.horas)),4)))+1))))/cl)) +1)
-	
 	var col_actual = (2 - hid_actual)/2 *100
 	
 	$ColorRect.color.a8 = col_actual
+	
+	resaltar()
 
 func hidratar():
 	reloj.restart()
@@ -64,3 +64,19 @@ func cosechar():
 
 func reiniciar():
 	reloj.restart()
+
+func agarrando(objeto, valor):
+	agarrando_obj = valor
+	obj_agarrado = objeto
+	
+
+func resaltar():
+	if agarrando_obj == true:
+		match obj_agarrado:
+			0:
+				if full == false:
+					$AnimationPlayer.play("Resaltar")
+	else:
+		if $AnimationPlayer.is_playing() == true:
+			$AnimationPlayer.stop()
+		$Marco.self_modulate = Color(0,0,0,0)

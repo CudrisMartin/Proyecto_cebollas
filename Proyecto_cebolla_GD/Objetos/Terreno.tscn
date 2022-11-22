@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Terreno.gd" type="Script" id=1]
 [ext_resource path="res://Nodos/Reloj.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Marco.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 15 )
@@ -9,9 +10,31 @@ extents = Vector2( 15, 15 )
 [sub_resource type="CircleShape2D" id=2]
 radius = 21.9317
 
+[sub_resource type="Animation" id=3]
+resource_name = "Resaltar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Marco:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.517647 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.517647 ) ]
+}
+
 [node name="Terreno" type="Node2D" groups=["Terreno"]]
 script = ExtResource( 1 )
 hidratacion = 10
+
+[node name="Marco" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.517647 )
+position = Vector2( 4.76837e-07, 4.76837e-07 )
+scale = Vector2( 0.9375, 0.9375 )
+texture = ExtResource( 3 )
 
 [node name="Reloj" parent="." instance=ExtResource( 2 )]
 horas_max = 12
@@ -40,6 +63,9 @@ margin_top = -16.0
 margin_right = 16.0
 margin_bottom = 16.0
 color = Color( 0.835294, 0.662745, 0.231373, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Resaltar = SubResource( 3 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Plantas_cer" to="." method="_on_Plantas_cer_area_entered"]

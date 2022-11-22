@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Objetos/Terreno.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Plantas/Semillas/Semilla_ceb.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objetos/Fuente.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Recursos/Pasto_ts.tres" type="TileSet" id=4]
@@ -24,7 +23,7 @@ width = 30
 [sub_resource type="ParticlesMaterial" id=4]
 render_priority = 5
 emission_shape = 2
-emission_box_extents = Vector3( 250, 4, 1 )
+emission_box_extents = Vector3( 380, 4, 1 )
 flag_disable_z = true
 direction = Vector3( 1, 1, 0 )
 spread = 97.69
@@ -106,200 +105,41 @@ script = ExtResource( 6 )
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 2, 0, 131085, 4, 0, 131086, 0, 0, 131087, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 2, 0, 196621, 4, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 2, 0, 262157, 4, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 2, 0, 327693, 4, 0, 327694, 0, 0, 327695, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 2, 0, 393229, 4, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 2, 0, 458765, 4, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 0, 0, 65554, 0, 0, 65555, 1, 0, 65556, 1, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 2, 0, 131089, 4, 0, 131090, 2, 0, 131093, 4, 0, 131094, 0, 0, 131095, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 2, 0, 196625, 4, 0, 196626, 2, 0, 196629, 4, 0, 196630, 0, 0, 196631, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 2, 0, 262161, 4, 0, 262162, 2, 0, 262165, 4, 0, 262166, 0, 0, 262167, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 2, 0, 327697, 4, 0, 327698, 2, 0, 327701, 4, 0, 327702, 0, 0, 327703, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 2, 0, 393233, 4, 0, 393234, 2, 0, 393237, 4, 0, 393238, 0, 0, 393239, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 2, 0, 458769, 4, 0, 458770, 2, 0, 458773, 4, 0, 458774, 0, 0, 458775, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524305, 4, 0, 524306, 2, 0, 524309, 4, 0, 524310, 0, 0, 524311, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 0, 0, 589842, 2, 0, 589845, 4, 0, 589846, 0, 0, 589847, 0, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655381, 4, 0, 655382, 0, 0, 655383, 0, 0, 720917, 4, 0, 720918, 0, 0, 720919, 0, 0, 786453, 4, 0, 786454, 0, 0, 786455, 0, 0, 851968, 3, 0, 851969, 3, 0, 851970, 3, 0, 851971, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 3, 0, 851980, 3, 0, 851981, 3, 0, 851982, 3, 0, 851983, 3, 0, 851984, 3, 0, 851985, 3, 0, 851986, 3, 0, 851987, 3, 0, 851988, 3, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -3
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0 )
-
-[node name="Terreno" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 80 )
-
-[node name="Terreno2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 80 )
-
-[node name="Terreno3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208, 80 )
-
-[node name="Terreno4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 80 )
-
-[node name="Terreno5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 80 )
-
-[node name="Terreno6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 80 )
-
-[node name="Terreno7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 336, 80 )
-
-[node name="Terreno8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368, 80 )
-
-[node name="Terreno9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400, 80 )
-
-[node name="Terreno10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 112 )
-
-[node name="Terreno11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 112 )
-
-[node name="Terreno12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208, 112 )
-
-[node name="Terreno13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 112 )
-
-[node name="Terreno14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 112 )
-
-[node name="Terreno15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 112 )
-
-[node name="Terreno16" parent="." instance=ExtResource( 1 )]
-position = Vector2( 336, 112 )
-
-[node name="Terreno17" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368, 112 )
-
-[node name="Terreno18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400, 112 )
-
-[node name="Terreno19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 144 )
-
-[node name="Terreno20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 144 )
-
-[node name="Terreno21" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208, 144 )
-
-[node name="Terreno22" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 144 )
-
-[node name="Terreno23" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 144 )
-
-[node name="Terreno24" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 144 )
-
-[node name="Terreno25" parent="." instance=ExtResource( 1 )]
-position = Vector2( 336, 144 )
-
-[node name="Terreno26" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368, 144 )
-
-[node name="Terreno27" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400, 144 )
-
-[node name="Terreno28" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 176 )
-
-[node name="Terreno29" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 176 )
-
-[node name="Terreno30" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208, 176 )
-
-[node name="Terreno31" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 176 )
-
-[node name="Terreno32" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 176 )
-
-[node name="Terreno33" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 176 )
-
-[node name="Terreno34" parent="." instance=ExtResource( 1 )]
-position = Vector2( 336, 176 )
-
-[node name="Terreno35" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368, 176 )
-
-[node name="Terreno36" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400, 176 )
-
-[node name="Terreno37" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 208 )
-
-[node name="Terreno38" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 208 )
-
-[node name="Terreno39" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208, 208 )
-
-[node name="Terreno40" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 208 )
-
-[node name="Terreno41" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 208 )
-
-[node name="Terreno42" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 208 )
-
-[node name="Terreno43" parent="." instance=ExtResource( 1 )]
-position = Vector2( 336, 208 )
-
-[node name="Terreno44" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368, 208 )
-
-[node name="Terreno45" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400, 208 )
-
-[node name="Terreno46" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 240 )
-
-[node name="Terreno47" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 240 )
-
-[node name="Terreno48" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208, 240 )
-
-[node name="Terreno49" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 240 )
-
-[node name="Terreno50" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 240 )
-
-[node name="Terreno51" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 240 )
-
-[node name="Terreno52" parent="." instance=ExtResource( 1 )]
-position = Vector2( 336, 240 )
-
-[node name="Terreno53" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368, 240 )
-
-[node name="Terreno54" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400, 240 )
+tile_data = PoolIntArray( 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 2, 0, 65555, 2, 0, 65556, 2, 0, 65557, 2, 0, 131075, 0, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 0, 0, 131090, 2, 0, 131091, 2, 0, 131092, 2, 0, 131093, 2, 0, 196611, 0, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 0, 0, 196626, 2, 0, 196627, 2, 0, 196628, 2, 0, 196629, 2, 0, 262147, 0, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 0, 0, 262162, 2, 0, 262163, 2, 0, 262164, 2, 0, 262165, 2, 0, 327683, 0, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 0, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 393219, 0, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393233, 0, 0, 393234, 2, 0, 393235, 2, 0, 393236, 2, 0, 393237, 2, 0, 458755, 0, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 0, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 524291, 0, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 0, 0, 524306, 2, 0, 524307, 2, 0, 524308, 2, 0, 524309, 2, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 2, 0, 589843, 2, 0, 589844, 2, 0, 589845, 2, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0, 655380, 2, 0, 655381, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 2, 0, 720902, 2, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 2, 0, 720912, 2, 0, 720913, 2, 0, 720914, 2, 0, 720915, 2, 0, 720916, 2, 0, 720917, 2, 0, 786432, 2, 0, 786433, 2, 0, 786434, 2, 0, 786435, 2, 0, 786436, 2, 0, 786437, 2, 0, 786438, 2, 0, 786439, 2, 0, 786440, 2, 0, 786441, 2, 0, 786442, 2, 0, 786443, 2, 0, 786444, 2, 0, 786445, 2, 0, 786446, 2, 0, 786447, 2, 0, 786448, 2, 0, 786449, 2, 0, 786450, 2, 0, 786451, 2, 0, 786452, 2, 0, 786453, 2, 0, 851968, 2, 0, 851969, 2, 0, 851970, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 2, 0, 851974, 2, 0, 851975, 2, 0, 851976, 2, 0, 851977, 2, 0, 851978, 2, 0, 851979, 2, 0, 851980, 2, 0, 851981, 2, 0, 851982, 2, 0, 851983, 2, 0, 851984, 2, 0, 851985, 2, 0, 851986, 2, 0, 851987, 2, 0, 851988, 2, 0, 851989, 2, 0 )
 
 [node name="Semilla_ceb" parent="." instance=ExtResource( 2 )]
-position = Vector2( 471, 40 )
+position = Vector2( 712, 96 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 256, 152 )
+position = Vector2( 384, 224 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.75, 0.75 )
 
 [node name="Manguera" parent="." instance=ExtResource( 3 )]
-position = Vector2( 480, 160 )
+position = Vector2( 728, 168 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 0, 0, 0, 296, 512, 296, 512, 0, 552, 0, 552, 352, -40, 352, -40, 0 )
+position = Vector2( 5.29728, 5.49997 )
+scale = Vector2( 1.49493, 1.49148 )
+polygon = PoolVector2Array( -3.5435, -3.68759, -3.5435, 291.321, 510.862, 291.321, 510.193, -3.68759, 551.666, -3.68759, 551.666, 351.664, 314.577, 351.127, -39.6656, 350.323, -39.6656, -3.68759 )
 
 [node name="Carro" parent="." instance=ExtResource( 7 )]
-position = Vector2( 64, 264 )
+position = Vector2( 640, 360 )
+scale = Vector2( 3, 3 )
 
 [node name="Clima" parent="." instance=ExtResource( 8 )]
 
 [node name="Lluvia" type="Particles2D" parent="."]
-position = Vector2( 256, 0 )
+position = Vector2( 384, 0 )
 amount = 400
 lifetime = 3.0
 randomness = 0.74
@@ -317,12 +157,11 @@ input_pass_on_modal_close_click = false
 color = Color( 0.0392157, 0.0117647, 0.184314, 1 )
 
 [node name="Clima_act" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
-color = Color( 0.984314, 0.984314, 0.403922, 0.156863 )
+color = Color( 0, 0, 0, 0 )
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 margin_right = 512.0

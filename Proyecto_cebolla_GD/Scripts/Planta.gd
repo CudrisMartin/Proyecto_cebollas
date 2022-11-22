@@ -35,7 +35,6 @@ func _process(_delta):
 
 
 func _on_Button_pressed():
-	print("Presionado")
 	if crecimiento >= 4:
 		var f = F_CEBOLLA.instance() #should create an instance of other node
 		f.global_position = self.global_position

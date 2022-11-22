@@ -6,6 +6,10 @@ onready var re = $Reloj
 
 signal reiniciar()
 
+var coste_dia = 100
+
+var dias = 0
+
 var climas = {
 	1: Color(0.98,
 			0.98,
@@ -22,6 +26,7 @@ var climas = {
 }
 
 func _ready():
+	colocar_terreno()
 	
 	re.connect("fin_reloj",self,"fin_dia")
 # warning-ignore:return_value_discarded
@@ -31,6 +36,8 @@ func _ready():
 	for i in ter:
 # warning-ignore:return_value_discarded
 		self.connect("reiniciar",i,"reiniciar")
+		$Semilla_ceb.connect("agarrando",i,"agarrando")
+	
 	
 	inicializar()
 
@@ -74,10 +81,17 @@ func inicializar():
 			k.call_deferred("queue_free")
 	
 	$CanvasLayer/Control/Fin_juego.rect_position = Vector2(290,-372)
-	$Carro.position = Vector2(64,40)
+	$Carro.position = Vector2(640,360)
 	$CanvasLayer/Noche.self_modulate.a = 0
 	
 
 func _on_Reiniciar_pressed():
 	inicializar()
+	
+
+func colocar_terreno():
+	for ts in $TileMap.get_used_cells_by_id(1):
+		var ter = preload("res://Objetos/Terreno.tscn").instance()
+		add_child(ter)
+		ter.position = $TileMap.map_to_world(ts) + Vector2(16,16)
 
