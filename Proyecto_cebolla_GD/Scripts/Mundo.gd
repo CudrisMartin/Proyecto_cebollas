@@ -55,11 +55,7 @@ func clima_nuevo(cl):
 
 func fin_dia():
 	$AnimationPlayer.play("fin_dia")
-	if Dinero.dinero >= 100:
-		$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "Sobreviviste otro dia mas"
-	else:
-		$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "No conseguiste reunir\nlo suficiente para sobrevivir"
-
+	
 func inicializar():
 	
 	emit_signal("reiniciar")
@@ -86,7 +82,11 @@ func inicializar():
 	
 
 func _on_Reiniciar_pressed():
-	inicializar()
+	if Dinero.dinero >= 100:
+		Dinero.dinero -= 100
+		inicializar()
+	else:
+		SceneManager.change_to_menu()
 	
 
 func colocar_terreno():
@@ -95,3 +95,12 @@ func colocar_terreno():
 		add_child(ter)
 		ter.position = $TileMap.map_to_world(ts) + Vector2(16,16)
 
+func _on_AnimationPlayer_animation_finished(anim_name):
+	match anim_name:
+		"fin_dia":
+			if Dinero.dinero >= 100:
+				$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "Sobreviviste otro dia mas"
+				$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Reiniciar.text = "Siguiente dia"
+			else:
+				$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Mensaje_final.text = "Te falto dinero para sobreivir"
+				$CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Reiniciar.text = "Salir"

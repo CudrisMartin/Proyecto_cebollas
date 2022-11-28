@@ -222,3 +222,4 @@ horas_max = 12
 anims/fin_dia = ExtResource( 11 )
 
 [connection signal="pressed" from="CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Reiniciar" to="." method="_on_Reiniciar_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
