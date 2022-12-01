@@ -42,7 +42,7 @@ func _ready():
 	inicializar()
 
 func _process(_delta):
-	$CanvasLayer/Control/Label.text = "Dinero: " + str(Dinero.dinero) +"\nClima actual: "+str(clima_act)+"\nHora: "+str(re.horas)
+	$CanvasLayer/Control/Label.text = "Dinero: " + str(Dinero.dinero) +"\nClima actual: "+str(clima_act)+"\nHora: "+str(re.horas)+"\nDia: "+str(Dinero.dias)
 	$Lluvia.emitting = (clima_act == 3)
 	
 	if Input.is_action_just_pressed("ui_accept"):
@@ -68,7 +68,9 @@ func inicializar():
 	
 	if pl.size() != 0:
 		for j in pl:
-			j.call_deferred("queue_free")
+			j.re.horas += 12
+			j.re.minutos = 0
+			j.re.segundos = 0
 	
 	var fr = get_tree().get_nodes_in_group("Fruto")
 	
@@ -84,6 +86,7 @@ func inicializar():
 func _on_Reiniciar_pressed():
 	if Dinero.dinero >= 100:
 		Dinero.dinero -= 100
+		Dinero.dias += 1
 		inicializar()
 	else:
 		SceneManager.change_to_menu()

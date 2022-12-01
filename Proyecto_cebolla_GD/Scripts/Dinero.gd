@@ -1,6 +1,7 @@
 extends Node
 
 var dinero = 100
+var dias = 1
 
 func cobrar_semillas():
 	dinero -= 10
