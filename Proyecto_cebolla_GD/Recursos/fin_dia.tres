@@ -15,27 +15,3 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 640, 360 ), Vector2( -104, 360 ) ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Noche:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer/Control/Fin_juego:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 3, 5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 290, -372 ), Vector2( 290, -372 ), Vector2( 290, 139 ) ]
-}
