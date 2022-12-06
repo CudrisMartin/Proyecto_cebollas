@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
+[ext_resource path="res://Recursos/GravityBold8.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Plantas/Semillas/Semilla_ceb.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objetos/Fuente.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Recursos/Pasto_ts.tres" type="TileSet" id=4]
@@ -98,6 +99,56 @@ Label/fonts/font = ExtResource( 12 )
 Panel/colors/0a03f2 = Color( 0.301961, 0.929412, 0.784314, 1 )
 Panel/styles/panel = SubResource( 6 )
 
+[sub_resource type="DynamicFont" id=11]
+size = 64
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+Label/fonts/font = SubResource( 11 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "nuevo_dia"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Dias:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "¡Empieza!" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Dias:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Noche:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Mundo" type="Node2D"]
 script = ExtResource( 6 )
 
@@ -133,7 +184,7 @@ scale = Vector2( 1.49493, 1.49148 )
 polygon = PoolVector2Array( -3.5435, -3.68759, -3.5435, 291.321, 510.862, 291.321, 510.193, -3.68759, 551.666, -3.68759, 551.666, 351.664, 314.577, 351.127, -39.6656, 350.323, -39.6656, -3.68759 )
 
 [node name="Carro" parent="." instance=ExtResource( 7 )]
-position = Vector2( 640, 360 )
+position = Vector2( -104, 360 )
 scale = Vector2( 3, 3 )
 
 [node name="Clima" parent="." instance=ExtResource( 8 )]
@@ -149,7 +200,6 @@ process_material = SubResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Noche" type="ColorRect" parent="CanvasLayer"]
-self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -178,14 +228,14 @@ text = "Dinero:
 Clima: "
 
 [node name="Fin_juego" type="Panel" parent="CanvasLayer/Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 34.0
-margin_top = -524.0
-margin_right = 500.0
-margin_bottom = -221.0
+anchor_left = 0.566
+anchor_top = -1.224
+anchor_right = 1.477
+anchor_bottom = -0.227
+margin_left = 0.207977
+margin_top = 527.096
+margin_right = -0.22406
+margin_bottom = 527.008
 rect_min_size = Vector2( 256, 150 )
 mouse_filter = 2
 input_pass_on_modal_close_click = false
@@ -215,11 +265,25 @@ rect_min_size = Vector2( 220, 32 )
 theme = ExtResource( 10 )
 text = "Jugar de nuevo"
 
+[node name="Dias" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.289
+anchor_top = 0.447
+anchor_right = 0.711
+anchor_bottom = 0.553
+margin_left = 0.0639954
+margin_top = -0.200012
+margin_right = -0.0640259
+margin_bottom = 0.199982
+theme = SubResource( 12 )
+text = "¡Empieza!"
+align = 1
+
 [node name="Reloj" parent="." instance=ExtResource( 9 )]
-horas_max = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fin_dia = ExtResource( 11 )
+anims/nuevo_dia = SubResource( 13 )
 
 [connection signal="pressed" from="CanvasLayer/Control/Fin_juego/CenterContainer/VBoxContainer/Reiniciar" to="." method="_on_Reiniciar_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

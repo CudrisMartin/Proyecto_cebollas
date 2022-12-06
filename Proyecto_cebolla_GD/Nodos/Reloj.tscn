@@ -4,3 +4,4 @@
 
 [node name="Reloj" type="Node"]
 script = ExtResource( 1 )
+horas_max = 12

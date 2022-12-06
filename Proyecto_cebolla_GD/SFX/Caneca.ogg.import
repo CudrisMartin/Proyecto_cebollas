@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Caneca.ogg-208a6da779af7803e27fa6eaafdbb64b.oggstr"
+
+[deps]
+
+source_file="res://SFX/Caneca.ogg"
+dest_files=[ "res://.import/Caneca.ogg-208a6da779af7803e27fa6eaafdbb64b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

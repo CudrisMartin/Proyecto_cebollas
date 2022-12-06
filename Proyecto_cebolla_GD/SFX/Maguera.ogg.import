@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Maguera.ogg-e308c1d4e0309d7b454c09b7b5fda6b0.oggstr"
+
+[deps]
+
+source_file="res://SFX/Maguera.ogg"
+dest_files=[ "res://.import/Maguera.ogg-e308c1d4e0309d7b454c09b7b5fda6b0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -51,6 +51,7 @@ func _on_Area2D_body_entered(body):
 				get_parent().call_deferred("add_child", new_plant)
 				body.inside = false
 				Dinero.cobrar_semillas()
+				$Plantar.play()
 	elif body.get_name() == "Manguera":
 		hidratar()
 		Dinero.cobrar_agua()

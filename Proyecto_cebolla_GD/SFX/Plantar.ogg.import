@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Plantar.ogg-5058f328b35b473802fb79237f1961a1.oggstr"
+
+[deps]
+
+source_file="res://SFX/Plantar.ogg"
+dest_files=[ "res://.import/Plantar.ogg-5058f328b35b473802fb79237f1961a1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

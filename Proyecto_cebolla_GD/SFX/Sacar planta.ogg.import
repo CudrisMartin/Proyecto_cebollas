@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sacar planta.ogg-f4629d74e3daa79466290f15c83b4703.oggstr"
+
+[deps]
+
+source_file="res://SFX/Sacar planta.ogg"
+dest_files=[ "res://.import/Sacar planta.ogg-f4629d74e3daa79466290f15c83b4703.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

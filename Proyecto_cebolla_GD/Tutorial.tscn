@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Recursos/GravityBold8.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Plantas/Semillas/Semilla_ceb.tscn" type="PackedScene" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://Recursos/Tierra_ts.tres" type="TileSet" id=5]
 [ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=6]
 [ext_resource path="res://Objetos/Carro.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Recursos/Menus.tres" type="Theme" id=10]
+[ext_resource path="res://Objetos/Terreno.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SFX/Sacar planta.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Musica/Intro theme.wav" type="AudioStream" id=10]
 [ext_resource path="res://Recursos/GravityBold8.tres" type="DynamicFont" id=12]
 
 [sub_resource type="Gradient" id=2]
@@ -21,7 +23,7 @@ width = 30
 [sub_resource type="ParticlesMaterial" id=4]
 render_priority = 5
 emission_shape = 2
-emission_box_extents = Vector3( 380, 4, 1 )
+emission_box_extents = Vector3( 512, 4, 1 )
 flag_disable_z = true
 direction = Vector3( 1, 1, 0 )
 spread = 97.69
@@ -59,17 +61,6 @@ tracks/0/keys = {
 "values": [ "" ]
 }
 
-[sub_resource type="DynamicFont" id=11]
-size = 8
-outline_size = 1
-outline_color = Color( 0.00392157, 0, 0, 1 )
-use_filter = true
-extra_spacing_top = 1
-extra_spacing_bottom = 1
-extra_spacing_char = 1
-extra_spacing_space = 1
-font_data = ExtResource( 1 )
-
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.905882, 0.711765, 0.129412, 1 )
 border_width_left = 2
@@ -105,6 +96,120 @@ border_color = Color( 0.824219, 0.520117, 0.196396, 1 )
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 
+[sub_resource type="Theme" id=18]
+default_font = ExtResource( 12 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 7 )
+Button/styles/normal = SubResource( 8 )
+Button/styles/pressed = SubResource( 9 )
+Label/fonts/font = ExtResource( 12 )
+Panel/colors/0a03f2 = Color( 0.301961, 0.929412, 0.784314, 1 )
+Panel/styles/panel = SubResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.905882, 0.711765, 0.129412, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.823529, 0.451164, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.905882, 0.87451, 0.129412, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.823529, 0.603922, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.957031, 0.421972, 0.100937, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.699219, 0.321976, 0.117447, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.952941, 0.760784, 0.423529, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.824219, 0.520117, 0.196396, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
+anti_aliasing = false
+
+[sub_resource type="Theme" id=13]
+default_font = ExtResource( 12 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 19 )
+Button/styles/normal = SubResource( 20 )
+Button/styles/pressed = SubResource( 21 )
+Label/fonts/font = ExtResource( 12 )
+Panel/colors/0a03f2 = Color( 0.301961, 0.929412, 0.784314, 1 )
+Panel/styles/panel = SubResource( 22 )
+
+[sub_resource type="DynamicFont" id=11]
+outline_size = 1
+outline_color = Color( 0.00392157, 0, 0, 1 )
+use_filter = true
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+extra_spacing_char = 1
+extra_spacing_space = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.905882, 0.711765, 0.129412, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.823529, 0.451164, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.905882, 0.87451, 0.129412, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.823529, 0.603922, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.957031, 0.421972, 0.100937, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.699219, 0.321976, 0.117447, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.952941, 0.760784, 0.423529, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.824219, 0.520117, 0.196396, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
+anti_aliasing = false
+
 [sub_resource type="Theme" id=12]
 default_font = ExtResource( 12 )
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
@@ -116,41 +221,44 @@ Button/constants/hseparation = 2
 Button/fonts/font = SubResource( 11 )
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource( 7 )
-Button/styles/normal = SubResource( 8 )
-Button/styles/pressed = SubResource( 9 )
+Button/styles/hover = SubResource( 14 )
+Button/styles/normal = SubResource( 15 )
+Button/styles/pressed = SubResource( 16 )
 Label/fonts/font = ExtResource( 12 )
 Panel/colors/0a03f2 = Color( 0.301961, 0.929412, 0.784314, 1 )
-Panel/styles/panel = SubResource( 6 )
+Panel/styles/panel = SubResource( 17 )
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Pasto" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 131072, 0, 0, 131073, 2, 0, 131083, 4, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 196608, 0, 0, 196609, 2, 0, 196619, 4, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262145, 2, 0, 262155, 4, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327681, 2, 0, 327691, 4, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393216, 0, 0, 393217, 2, 0, 393227, 4, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 131072, 0, 0, 131073, 2, 0, 131083, 4, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 196608, 0, 0, 196609, 2, 0, 196619, 4, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262145, 2, 0, 262155, 4, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 0, 0, 458767, 4, 0, 524303, 4, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
 z_index = -3
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 1, 0, 0, 2, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 131073, 0, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 0, 0, 196609, 0, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 0, 0, 262145, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 0, 0, 327681, 0, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 0, 0, 393217, 0, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0 )
+tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 131073, 0, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 0, 0, 196609, 0, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 0, 0, 262145, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0 )
 
 [node name="Semilla_ceb" parent="." instance=ExtResource( 2 )]
-position = Vector2( 430, 87 )
+position = Vector2( 864, 87 )
+scale = Vector2( 2, 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 256, 150 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
+position = Vector2( 512, 300 )
 
 [node name="Manguera" parent="." instance=ExtResource( 3 )]
-position = Vector2( 431, 165 )
+position = Vector2( 864, 280 )
+scale = Vector2( 2, 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2( 2, 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 5.29728, 5.49997 )
@@ -158,13 +266,13 @@ scale = Vector2( 1.49493, 1.49148 )
 polygon = PoolVector2Array( -3.5435, -3.68759, -3.5435, 197.455, 338.947, 197.455, 338.947, -3.68759, 371.056, -3.68759, 371.056, 216.228, -35.652, 216.228, -35.652, -3.68759 )
 
 [node name="Carro" parent="." instance=ExtResource( 7 )]
-position = Vector2( 452, 259 )
-scale = Vector2( 2, 2 )
+position = Vector2( 880, 472 )
+scale = Vector2( 4, 4 )
 
 [node name="Lluvia" type="Particles2D" parent="."]
-position = Vector2( 384, 0 )
+position = Vector2( 512, 0 )
 amount = 400
-lifetime = 3.0
+lifetime = 4.0
 randomness = 0.74
 visibility_rect = Rect2( -256, -100, 512, 200 )
 process_material = SubResource( 4 )
@@ -184,23 +292,141 @@ anims/0 = SubResource( 10 )
 [node name="Tutorial" type="Panel" parent="."]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 166.0
-margin_bottom = 91.0
+margin_right = 672.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 150, 75 )
-theme = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
+theme = SubResource( 18 )
 
 [node name="Label" type="Label" parent="Tutorial"]
-margin_right = 40.0
-margin_bottom = 16.0
-theme = ExtResource( 10 )
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 168.0
+margin_bottom = 24.0
+theme = SubResource( 13 )
 
 [node name="Continuar" type="Button" parent="Tutorial"]
-margin_left = 64.0
-margin_top = 40.0
-margin_right = 139.0
-margin_bottom = 64.0
+margin_left = 488.0
+margin_top = 56.0
+margin_right = 638.0
+margin_bottom = 96.0
 theme = SubResource( 12 )
 text = "Siguiente"
+
+[node name="Terreno" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 288, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 352, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 416, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 480, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 544, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 608, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 672, 160 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 288, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 352, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 416, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 480, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno16" parent="." instance=ExtResource( 8 )]
+position = Vector2( 544, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno17" parent="." instance=ExtResource( 8 )]
+position = Vector2( 608, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno18" parent="." instance=ExtResource( 8 )]
+position = Vector2( 672, 224 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno19" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno20" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno21" parent="." instance=ExtResource( 8 )]
+position = Vector2( 288, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno22" parent="." instance=ExtResource( 8 )]
+position = Vector2( 352, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno23" parent="." instance=ExtResource( 8 )]
+position = Vector2( 416, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno24" parent="." instance=ExtResource( 8 )]
+position = Vector2( 480, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno25" parent="." instance=ExtResource( 8 )]
+position = Vector2( 544, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno26" parent="." instance=ExtResource( 8 )]
+position = Vector2( 608, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Terreno27" parent="." instance=ExtResource( 8 )]
+position = Vector2( 672, 288 )
+scale = Vector2( 2, 2 )
+
+[node name="Boton_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -4.0
+autoplay = true
+
+[connection signal="body_entered" from="Carro" to="." method="_on_Carro_body_entered"]
+[connection signal="pressed" from="Tutorial/Continuar" to="." method="_on_Continuar_pressed"]
