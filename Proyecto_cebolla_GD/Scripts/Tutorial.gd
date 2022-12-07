@@ -9,7 +9,8 @@ var dialogos = {
 	5: "Y si llueve demasiado se pueden pudrir",
 	6: "Una vez veas el fruto, arrancala con el click",
 	7: "Para vender el cultivo, arrastralo al auto",
-	8: "Listo, ya tienes todo para empezar a jugar"
+	8: "Sobrevivir cada dia cuesta 100 de dinero,\nasegurate de planear tus movimientos",
+	9: "Listo, ya tienes todo para empezar a jugar"
 }
 
 var climas = {
@@ -25,6 +26,11 @@ var climas = {
 			0.15,
 			0.15,
 			0.19)
+}
+
+var SFX_climas = {
+	1: preload("res://SFX/Sequia.ogg"),
+	3: preload("res://SFX/Lluvia.ogg")
 }
 
 var clima_act = 2
@@ -62,15 +68,19 @@ func _process(delta):
 			$Manguera.show()
 			if $Manguera/Manguera.inside:
 				$Tutorial/Continuar.show()
+			$Clima1.play()
 		4:
 			clima_act = 1
 			$CanvasLayer/Clima_act.color = climas[1]
 			$Tutorial/Continuar.show()
+			$Clima2.play()
 		5:
+			$Clima1.stop()
 			clima_act = 3
 			$CanvasLayer/Clima_act.color = climas[3]
 			$Lluvia.emitting = true
 			$Tutorial/Continuar.show()
+			
 		6:
 			var resul = 0
 			for i in terrenos:
@@ -83,6 +93,9 @@ func _process(delta):
 			if t_acabado:
 				$Tutorial/Continuar.show()
 		8: 
+			$Tutorial/Continuar.show()
+		9:
+			$Tutorial/Continuar.text = "A jugar"
 			$Tutorial/Continuar.show()
 
 

@@ -41,5 +41,8 @@ func _on_Button_pressed():
 		f.calidad = crecimiento
 		emit_signal("cosecha")   
 		get_parent().add_child(f)
-		call_deferred("queue_free")
-		
+		$Sacar.play()
+		hide()
+
+func _on_Sacar_finished():
+	call_deferred("queue_free")

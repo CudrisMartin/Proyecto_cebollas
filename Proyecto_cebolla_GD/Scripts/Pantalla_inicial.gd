@@ -8,8 +8,9 @@ func _ready():
 	$Cul_cebolla.ter = self
 	$Cul_cebolla/Button.disabled = true
 	SceneManager.main_menu = self
+	$Creditos.hide()
 
-func _on_Button_pressed():
+func _on_Jugar_pressed():
 	if !SceneManager.t_shown:
 		var ceb = CEB.instance()
 		add_child(ceb)
@@ -25,3 +26,15 @@ func _on_Timer_timeout():
 	else:
 		SceneManager.change_to_tutorial()
 		SceneManager.t_shown = true
+
+
+func _on_Volver_pressed():
+	$Creditos.hide()
+	$Menu.show()
+	$Boton_sfx.play()
+
+
+func _on_Creditos_pressed():
+	$Creditos.show()
+	$Menu.hide()
+	$Boton_sfx.play()

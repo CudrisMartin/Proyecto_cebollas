@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Recursos/GravityBold8.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Plantas/Semillas/Semilla_ceb.tscn" type="PackedScene" id=2]
@@ -10,7 +10,9 @@
 [ext_resource path="res://Objetos/Terreno.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SFX/Sacar planta.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Musica/Intro theme.wav" type="AudioStream" id=10]
+[ext_resource path="res://SFX/Sequia.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Recursos/GravityBold8.tres" type="DynamicFont" id=12]
+[ext_resource path="res://SFX/Lluvia.ogg" type="AudioStream" id=13]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.988235, 1 )
@@ -96,7 +98,7 @@ border_color = Color( 0.824219, 0.520117, 0.196396, 1 )
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 
-[sub_resource type="Theme" id=18]
+[sub_resource type="Theme" id=23]
 default_font = ExtResource( 12 )
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
@@ -295,7 +297,7 @@ margin_top = 16.0
 margin_right = 672.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 150, 75 )
-theme = SubResource( 18 )
+theme = SubResource( 23 )
 
 [node name="Label" type="Label" parent="Tutorial"]
 margin_left = 16.0
@@ -425,8 +427,14 @@ stream = ExtResource( 9 )
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -4.0
+volume_db = -5.0
 autoplay = true
+
+[node name="Clima1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="Clima2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 
 [connection signal="body_entered" from="Carro" to="." method="_on_Carro_body_entered"]
 [connection signal="pressed" from="Tutorial/Continuar" to="." method="_on_Continuar_pressed"]

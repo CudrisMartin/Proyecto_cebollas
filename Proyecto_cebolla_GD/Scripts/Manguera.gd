@@ -19,5 +19,7 @@ func _process(_delta):
 func _on_AreaClicks_input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed("left_click"):
 		inside = true
+		$AudioStreamPlayer2D.play()
 	if event.is_action_released("left_click"):
 		inside = false
+		$AudioStreamPlayer2D.stop()

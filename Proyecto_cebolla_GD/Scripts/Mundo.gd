@@ -55,6 +55,8 @@ func fin_dia():
 func inicializar():
 	$CanvasLayer/Dias.text = "Dia "+str(dias)
 	
+	$Musica.play()
+	
 	emit_signal("reiniciar")
 	
 	$Clima/Reloj.restart()
@@ -82,7 +84,7 @@ func inicializar():
 func _on_Reiniciar_pressed():
 	if Dinero.dinero >= 100:
 		Dinero.dinero -= 100
-		Dinero.dias += 1
+		dias += 1
 		inicializar()
 	else:
 		SceneManager.change_to_menu()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Planta.gd" type="Script" id=1]
 [ext_resource path="res://Nodos/Reloj.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Sprites/Plantas/Cultivo_cebollas/5.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Plantas/Cultivo_cebollas/9.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Plantas/Cultivo_cebollas/0.png" type="Texture" id=12]
+[ext_resource path="res://SFX/Sacar planta.ogg" type="AudioStream" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -34,7 +35,6 @@ animation = "Crecimiento"
 frame = 6
 
 [node name="Reloj" parent="." instance=ExtResource( 2 )]
-horas_max = 12
 modo = 1
 activado = true
 
@@ -52,4 +52,9 @@ margin_top = -10.0
 margin_right = 8.0
 margin_bottom = 10.0
 
+[node name="Sacar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+volume_db = -5.0
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="Sacar" to="." method="_on_Sacar_finished"]
